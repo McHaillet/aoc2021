@@ -1,17 +1,4 @@
-use std::env;
-use std::fs;
-
-fn read_input() -> Vec<String> {
-    let args: Vec<String> = env::args().collect();
-    let file_path: &String = &args[1];
-    println!("Input file: {}", file_path);
-    let contents: String = fs::read_to_string(file_path)
-        .expect("Should have been able to read the file");
-    contents
-        .split('\n')
-        .map(|v: &str| v.to_string())
-        .collect()
-}
+use aoc2021::read_input;
 
 fn part1(data: Vec<u32>) {
     let mut y: u32;
